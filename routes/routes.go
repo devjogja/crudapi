@@ -1,4 +1,4 @@
-package config
+package routes
 
 import (
 	"net/http"
@@ -6,8 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Router() *gin.Engine()  {
-	router := gin.Default()
+func Routes(router *gin.Engine) {
 	router.GET("/", welcome)
 }
 
