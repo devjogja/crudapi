@@ -1,4 +1,4 @@
-package routes
+package config
 
 import (
 	"net/http"
@@ -6,9 +6,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Routes(router *gin.Engine) {
+func Router() *gin.Engine()  {
+	router := gin.Default()
 	router.GET("/", welcome)
 }
+
 func welcome(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status":  200,
